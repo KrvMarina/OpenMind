@@ -10,6 +10,7 @@ const Navbar = () => {
             <div className={styles.links}>
                 <Link href="/category">Category</Link>
                 <Link href="/about">About</Link>
+                <Link href="/contact">Contact</Link>
                 <Link href="/dashboard">Dashboard</Link>
 
                 <button className={styles.logout}
