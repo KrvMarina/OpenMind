@@ -2,9 +2,12 @@
     font-size: 48px;
     color: var(--main-colour);
     font-weight: 400;
-
 }
 
 .subtitle {
     font-size: 16px;
+}
+
+.text_block {
+    text-align: center;
 }

@@ -1,0 +1,6 @@
+.container {
+    font-size: 18px;
+    color: var(--light-colour);
+    background-color: var(--main-colour);
+
+}
