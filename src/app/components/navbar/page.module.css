@@ -6,7 +6,7 @@
 }
 
 .logo {
-    color: #2C786C;
+    color: var(--main-colour);
     font-weight: 600;
     font-size: 20px;
 }
@@ -18,9 +18,9 @@
 }
 
 .logout {
-    border: solid #2C786C 1px;
+    border: var(--border-main-colour);
     background-color: transparent;
-    color: #2C786C;
+    color: var(--main-colour);
     cursor: pointer;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;

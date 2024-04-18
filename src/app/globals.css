@@ -4,16 +4,24 @@
   margin: 0;
 }
 
+:root {
+  --main-colour: #2C786C;
+  --text-colour: #485656;
+  --light-colour: #FCFCFC;
+  --icon-colour: #B8C9C9;
+  --background-card: #fff;
+  --border-card: solid #EAEAEA 1px;
+  --border-main-colour: solid #2C786C 1px;
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #FCFCFC;
-  color: #485656;
-
+  background-color: var(--light-colour);
+  color: var(--text-colour);
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-
 }
 
 a {
@@ -27,7 +35,6 @@ a {
   padding: 24px 0;
   display: flex;
   flex-direction: column;
-
 }
 
 .center-container {
@@ -35,8 +42,8 @@ a {
 }
 
 .footer-back {
-  color: #FCFCFC;
-  background-color: #2C786C;
+  color: var(--light-colour);
+  background-color: var(--main-colour);
 }
 
 
