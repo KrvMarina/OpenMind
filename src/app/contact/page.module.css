@@ -1,3 +1,56 @@
 .container {
-    background-color: rgb(41, 61, 220);
+    margin: 32px 0;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.titel {
+    font-size: 48px;
+    color: var(--title-colour);
+}
+
+.titel_h3 {
+    font-size: 24px;
+    color: var(--title-colour);
+    text-align: center;
+    margin: 24px 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.label {
+    margin-bottom: 8px;
+}
+
+.input,
+.text_area {
+    margin-bottom: 24px;
+    padding: 8px 16px;
+    background-color: var(--background-card);
+    border: var(--border-card);
+    border-radius: 10px;
+    outline: none;
+}
+
+.input::placeholder,
+.text_area::placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+.input[type="text"],
+.text_area {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-colour);
 }
