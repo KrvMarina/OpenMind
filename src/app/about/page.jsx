@@ -11,8 +11,8 @@ const About = () => {
             <p>At OpenMind, we believe in the power of diverse perspectives and
                 the value of shared experiences. Our platform is designed to be a
                 welcoming space where everyone can find something that resonates
-                with them. Whether you're interested in technology, lifestyle,
-                health, travel, art, or any other topic, our blog is a place
+                with them. Whether you're interested in life, self improvement,
+                work, technology, media, or any other topic, our blog is a place
                 where you can explore a wide range of subjects and engage with
                 thoughtful content.
             </p>
