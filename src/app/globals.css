@@ -23,6 +23,7 @@ body {
   color: var(--text-colour);
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 a {
