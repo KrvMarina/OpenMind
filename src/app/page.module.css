@@ -1,6 +1,6 @@
 .titel {
     font-size: 48px;
-    color: var(--main-colour);
+    color: var(--title-colour);
     font-weight: 400;
 }
 
@@ -9,5 +9,8 @@
 }
 
 .text_block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     text-align: center;
 }
