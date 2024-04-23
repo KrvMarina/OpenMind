@@ -1,1 +1,42 @@
-.container {}
+.container {
+    margin: 32px 0;
+}
+
+.titel {
+    font-size: 48px;
+    color: var(--title-colour);
+}
+
+.cards_container {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Три колонки однакової ширини */
+    gap: 24px;
+}
+
+.card {
+    border: var(--border-card);
+    background: var(--background-card);
+    padding: 32px;
+    border-radius: 16px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    transition: all 200ms ease-in-out;
+}
+
+.card:hover {
+    background: var(--main-colour);
+    color: var(--light-colour);
+    border: none;
+}
+
+.title_card {
+    display: flex;
+    gap: 4px;
+    font-size: 20px;
+}
