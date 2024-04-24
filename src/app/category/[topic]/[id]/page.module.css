@@ -1,0 +1,18 @@
+.accent {
+    color: var(--main-colour);
+    font-weight: 600;
+}
+
+.container {
+    margin: 32px 0;
+}
+
+.titel {
+    font-size: 48px;
+    color: var(--title-colour);
+    font-weight: 400;
+}
+
+.container p {
+    margin: 24px 0px;
+}
