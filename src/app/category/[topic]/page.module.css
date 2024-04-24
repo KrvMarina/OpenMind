@@ -1,19 +1,16 @@
-.container {
-    margin: 32px 0;
-}
-
-.titel {
-    font-size: 48px;
-    color: var(--title-colour);
-    font-weight: 400;
-}
-
 .cards_container {
     margin-top: 32px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* Три колонки однакової ширини */
     gap: 24px;
+}
+
+.img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
 .card {
@@ -27,19 +24,32 @@
     flex-direction: column;
     justify-content: center;
     gap: 16px;
-    transition: all 200ms ease-in-out;
 }
 
 .title_card {
-    display: flex;
-    gap: 4px;
     font-size: 20px;
     font-weight: 400;
     color: var(--title-colour);
 }
 
-.card:hover {
-    background: var(--main-colour);
-    color: var(--light-colour);
-    border: none;
+.icons {
+    display: flex;
+    gap: 16px;
+}
+
+.icons p,
+.small_text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.small_text,
+.icons {
+    color: var(--small_text-colour);
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
 }

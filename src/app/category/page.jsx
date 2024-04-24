@@ -13,49 +13,49 @@ import { FaPlus } from "react-icons/fa";
 
 const categories = [
     {
-        href: "#",
+        href: "/category/Life",
         icon: <FaHeart />,
         title: "Life",
         description: "Food, Home, Health, Family, Relationships, Pets"
     },
     {
-        href: "#",
+        href: "/category/Self Improvement",
         icon: <FaPerson />,
         title: "Self Improvement",
         description: "Mental Health, Productivity, Mindfulness"
     },
     {
-        href: "#",
+        href: "/category/Work",
         icon: <MdOutlineWork />,
         title: "Work",
         description: "Marketing, Business, Leadership, Remote Work"
     },
     {
-        href: "#",
+        href: "/category/Technology",
         icon: <GrTechnology />,
         title: "Technology",
         description: "Blockchain, Data Science, Gadgets, Security, Artificial Intelligence"
     },
     {
-        href: "#",
+        href: "/category/Software Development",
         icon: <HiMiniComputerDesktop />,
         title: "Software Development",
         description: "Programming, Programming Languages, Dev Ops, Operating Systems"
     },
     {
-        href: "#",
+        href: "/category/Media",
         icon: <FaPerson />,
         title: "Media",
         description: "Writing, Art, Gaming, Humor, Movies, Music, Photography, Television"
     },
     {
-        href: "#",
+        href: "/category/Culture",
         icon: <IoPeople />,
         title: "Culture",
         description: "Philosophy, Religion, Spirituality, Fashion, Beauty, Language, Sports"
     },
     {
-        href: "#",
+        href: "/category/World",
         icon: <BiWorld />,
         title: "World",
         description: "Cities, Nature, Travel"
@@ -69,7 +69,7 @@ const Category = () => {
             <h2 className={styles.titel}>Category</h2>
             <div className={styles.cards_container}>
                 {categories.map((category, index) => (
-                    <Link key={index} href={category.href}>
+                    <Link key={index} href={category.href} >
                         <div className={styles.card}>
                             <h4 className={styles.title_card}>{category.icon}{category.title}</h4>
                             <p>{category.description}</p>

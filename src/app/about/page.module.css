@@ -10,6 +10,7 @@
 .titel {
     font-size: 48px;
     color: var(--title-colour);
+    font-weight: 400;
 }
 
 .container p {
