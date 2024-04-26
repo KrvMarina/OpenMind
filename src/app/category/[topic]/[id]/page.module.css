@@ -5,23 +5,31 @@
 }
 
 .container {
-    margin: 0 auto;
+    margin: 32px auto;
     max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.author {
+.avatar,
+.heart {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
 }
 
 .author {
     color: var(--small_text-colour);
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.avatar {
+.icon {
     width: 24px;
     height: 24px;
+
 }
 
 .img {
@@ -29,4 +37,9 @@
     height: 400px;
     object-fit: cover;
     border-radius: 16px;
+}
+
+.post_text {
+    font-size: 18px;
+    line-height: 160%;
 }

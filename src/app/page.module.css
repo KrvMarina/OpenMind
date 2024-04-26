@@ -1,3 +1,7 @@
+.container {
+    margin: 32px 0;
+}
+
 .titel {
     font-size: 48px;
     color: var(--title-colour);
