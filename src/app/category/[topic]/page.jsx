@@ -31,7 +31,7 @@ const Topic = ({ params }) => {
                     </div>
                 </Link>
 
-                <Link href="/topic/2" >
+                <Link href="./topic/2" >
                     <div className={styles.card}>
                         <Image
                             src="/photo.png"
@@ -51,7 +51,7 @@ const Topic = ({ params }) => {
                     </div>
                 </Link>
 
-                <Link href="/topic/3" >
+                <Link href="./topic/3" >
                     <div className={styles.card}>
                         <Image
                             src="/photo.png"

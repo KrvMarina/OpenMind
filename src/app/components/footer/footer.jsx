@@ -1,15 +1,20 @@
 import React from "react";
-import Link from "next/link";
-import styles from './page.module.css'
+import styles from './page.module.css';
+import Button from "../button/button";
 
 
 const Footer = () => {
     return (
         <div className={styles.container}>
             <div>©2023 OpenMind. All rights reserved.</div>
-            <form action="">
-                <h3>Form</h3>
-                <input type="text" placeholder="Enter name" />
+            <form action="" className={styles.form}>
+                <h3 className={styles.titel_h3}>Subscribe</h3>
+                <label htmlFor="email" className={styles.label}>News!</label>
+                <div className="">
+                    <input type="email" placeholder="Enter e-mail" id="email" className={styles.input} />
+                    <input type="submit" value="Send" className={styles.submit_btn} />
+                </div>
+
             </form>
         </div>
 

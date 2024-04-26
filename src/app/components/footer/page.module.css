@@ -1,6 +1,28 @@
 .container {
-    height: 64px;
+    height: 164px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.input {
+    margin-bottom: 24px;
+    padding: 8px 16px;
+    background-color: var(--background-card);
+    border: var(--border-card);
+    border-radius: 10px;
+    outline: none;
+    width: 280px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.titel_h3 {
+    font-size: 24px;
+
+    font-weight: 400;
 }
