@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./page.module.css";
+import Button from "../button/button";
 
 const Navbar = () => {
     return (
@@ -12,12 +13,7 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
                 <Link href="/contact">Contact</Link>
                 <Link href="/dashboard">Dashboard</Link>
-
-                <button className={styles.logout}
-                    onClick={() => {
-                        console.log("Hi");
-                    }}
-                >Logout</button>
+                <Button url="#" text="Logout" inverted />
             </div>
         </div>
     )

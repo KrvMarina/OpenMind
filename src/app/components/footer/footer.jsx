@@ -12,7 +12,7 @@ const Footer = () => {
                 <label htmlFor="email" className={styles.label}>News!</label>
                 <div className="">
                     <input type="email" placeholder="Enter e-mail" id="email" className={styles.input} />
-                    <input type="submit" value="Send" className={styles.submit_btn} />
+                    <Button url="#" text="Send" inverted />
                 </div>
 
             </form>

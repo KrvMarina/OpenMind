@@ -9,3 +9,15 @@
     border-radius: 50px;
     cursor: pointer;
 }
+
+.inverted {
+    font-size: 16px;
+    color: var(--main-colour);
+    background-color: var(--light-colour);
+    font-weight: 400;
+    padding: 12px 40px;
+    letter-spacing: 1.25px;
+    border: var(--border-btn);
+    border-radius: 50px;
+    cursor: pointer;
+}
