@@ -69,7 +69,7 @@ export default function Home() {
 
             <h3 className={styles.titel_h3}>Popular posts</h3>
             <div className={styles.cards_container}>
-                <Link href="category/topic/1">
+                <Link href="./topic/1">
                     <div className={styles.card}>
                         <Image
                             src="/photo.png"
@@ -89,7 +89,7 @@ export default function Home() {
                     </div>
                 </Link>
 
-                <Link href="category/topic/2" >
+                <Link href="./topic/2" >
                     <div className={styles.card}>
                         <Image
                             src="/photo.png"
@@ -109,7 +109,7 @@ export default function Home() {
                     </div>
                 </Link>
 
-                <Link href="category/topic/3" >
+                <Link href="./topic/3" >
                     <div className={styles.card}>
                         <Image
                             src="/photo.png"
@@ -134,7 +134,7 @@ export default function Home() {
             <div className={styles.category_content}>
                 {categories.map((category, index) => (
                     <Link key={index} href={category.href} >
-                        <div className={styles.card}>
+                        <div className={styles.category_card}>
                             <h4 className={styles.title_card_category}>{category.icon}{category.title}</h4>
                         </div>
                     </Link>

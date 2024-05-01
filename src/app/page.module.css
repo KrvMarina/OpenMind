@@ -91,7 +91,7 @@
     gap: 16px;
 }
 
-.card {
+.category_card {
     border: var(--border-card);
     background: var(--background-card);
     padding: 16px;
