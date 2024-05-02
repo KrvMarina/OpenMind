@@ -1,0 +1,25 @@
+.container {
+    margin: 32px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titel_h3 {
+    font-size: 24px;
+    color: var(--title-colour);
+    text-align: center;
+    margin: 24px 0;
+    font-weight: 400;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.under_form {
+    margin-top: 8px;
+    text-align: center;
+}
