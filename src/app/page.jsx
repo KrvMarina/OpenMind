@@ -7,7 +7,6 @@ import Link from "next/link";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
-
 import { FaPerson } from "react-icons/fa6";
 import { MdOutlineWork } from "react-icons/md";
 import { GrTechnology } from "react-icons/gr";

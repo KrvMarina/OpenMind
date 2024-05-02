@@ -12,7 +12,7 @@ const Navbar = () => {
                 <Link href="/category">Category</Link>
                 <Link href="/about">About</Link>
                 <Link href="/contact">Contact</Link>
-                <Link href="/dashboard">Dashboard</Link>
+                <Link href="/dashboard/add">Dashboard</Link>
                 <Button url="./dashboard/signin" text="Sign in" inverted />
             </div>
         </div>
