@@ -2,6 +2,7 @@ import React from "react";
 import styles from './page.module.css'
 import Image from "next/image";
 import Button from "../components/button/button";
+import Input from "../components/input/input";
 
 const Contact = () => {
     return (
@@ -10,10 +11,8 @@ const Contact = () => {
             <h3 className={styles.titel_h3}>Let's Keep in Touch</h3>
             <div className={styles.content}>
                 <form className={styles.form}>
-                    <label htmlFor="name" className={styles.label}>Name</label>
-                    <input type="text" id="name" placeholder="Enter name" className={styles.input} />
-                    <label htmlFor="email" className={styles.label}>Email</label>
-                    <input type="text" id="email" placeholder="Enter email" className={styles.input} />
+                    <Input type="text" id="name" placeholder="Enter name" />
+                    <Input type="e-mail" id="email" placeholder="Enter email" />
                     <label htmlFor="message" className={styles.label}>Message</label>
                     <textarea
                         className={styles.text_area}
