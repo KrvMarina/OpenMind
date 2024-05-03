@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Input from "@/app/components/input/input";
-import Link from "next/link";
-import Menu from "../menu/page";
+import Menu from "../../components/menu/page";
 import Button from "@/app/components/button/button";
 
 const categories = [

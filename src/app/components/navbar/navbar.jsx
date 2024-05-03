@@ -13,7 +13,7 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
                 <Link href="/contact">Contact</Link>
                 <Link href="/dashboard/add">Dashboard</Link>
-                <Button url="./dashboard/signin" text="Sign in" inverted />
+                <Button url="/dashboard/signin" text="Sign in" inverted />
             </div>
         </div>
     )
