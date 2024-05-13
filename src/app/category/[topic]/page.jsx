@@ -14,7 +14,7 @@ const Topic = ({ params }) => {
                 <Link href="./topic/1">
                     <div className={styles.card}>
                         <Image
-                            src="/photo.png"
+                            src="https://images.unsplash.com/photo-1556386734-4227a180d19e?q=80&w=1905&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             width={500}
                             height={500}
                             alt="photo"

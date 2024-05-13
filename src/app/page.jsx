@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import global from "./globals.css";
 import Button from "./components/button/button";
 import Link from "next/link";
 import { IoEyeSharp } from "react-icons/io5";
