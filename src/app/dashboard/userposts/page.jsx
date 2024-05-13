@@ -1,24 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Input from "@/app/components/input/input";
 import Menu from "../../components/menu/page";
 import Button from "@/app/components/button/button";
 import Link from "next/link";
+import useSWR from "swr";
 
-const categories = [
-    "Life",
-    "Self Improvement",
-    "Work",
-    "Technology",
-    "Software Development",
-    "Media",
-    "Culture",
-    "World"
-];
+
 
 const Userposts = () => {
+
+    const fetcher = (...args) => fetch(...args).then((res) => res.json());
+    const { data, mutate, error, isLoading } = useSWR(
+        "https://jsonplaceholder.typicode.com/posts",
+        fetcher
+    );
+    console.log(data);
     return (
         <div className={styles.container}>
             <h2 className={styles.titel}>Dashboard</h2>
