@@ -3,13 +3,27 @@ import styles from './page.module.css';
 import { RxAvatar } from "react-icons/rx";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
+import { notFound } from "next/navigation";
 
+async function getData(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts${id}`, {
+        cache: "no-store",
+    });
 
-const Post = () => {
+    if (!res.ok) {
+        throw notFound();
+    }
+
+    return res.json();
+}
+
+const Post = async ({ params }) => {
+    const data = await getData(params.id);
+
     return (
         <div className={styles.container}>
 
-            <h2 className={styles.titel}>Always Hungry and Tired? Here Are 8 Potential Reasons Why</h2>
+            <h2 className={styles.titel}>{data.title}</h2>
             <div className={styles.author}>
                 <p className={styles.avatar}>
                     <RxAvatar className={styles.icon} />Anna
