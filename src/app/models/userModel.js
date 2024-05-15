@@ -1,6 +1,5 @@
-import mongoose from "mongoose";
+import { Schema, model, models } from "mongoose";
 
-const { Schema } = mongoose
 
 const userSchema = new Schema(
     {
@@ -18,8 +17,9 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-    },
-    { timestamps: true }
+    }, { timestamps: true }
 );
 
-export default mongoose.model("User", userSchema);
+const UserModel = models.post || model('user', userSchema);
+
+export default UserModel;

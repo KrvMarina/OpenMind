@@ -12,6 +12,7 @@ import { GrTechnology } from "react-icons/gr";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { IoPeople } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
+import { getPosts } from "./api/posts/route";
 
 const categories = [
     {
@@ -57,6 +58,8 @@ const categories = [
 ];
 
 export default function Home() {
+    //const res = await getPosts();
+    // console.log(res);
     return (
         <div className={styles.container}>
             <div className={styles.text_block}>
