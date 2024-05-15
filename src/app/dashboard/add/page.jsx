@@ -5,6 +5,12 @@ import Input from "@/app/components/input/input";
 import Menu from "../../components/menu/page";
 import Button from "@/app/components/button/button";
 
+export const metadata = {
+    title: "Dashboard -  Add",
+    description: "page",
+};
+
+
 const categories = [
     "Life",
     "Self Improvement",

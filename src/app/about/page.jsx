@@ -2,6 +2,11 @@ import React from "react";
 import styles from './page.module.css'
 import Button from "../components/button/button";
 
+export const metadata = {
+    title: "About",
+    description: "page",
+};
+
 const About = () => {
     return (
         <div className={styles.container}>

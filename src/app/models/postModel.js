@@ -1,6 +1,10 @@
 import { Schema, model, models } from "mongoose";
 
 const postSchema = new Schema({
+    category: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String,
         required: true,

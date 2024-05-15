@@ -9,6 +9,11 @@ import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { IoPeople } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
 
+export const metadata = {
+    title: "Categories",
+    description: "page",
+};
+
 const categories = [
     {
         href: "/category/Life",

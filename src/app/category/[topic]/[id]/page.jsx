@@ -5,6 +5,14 @@ import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({ params }) {
+
+    const data = await getData(params.id)
+    return {
+        title: data.title,
+        description: "page",
+    };
+}
 async function getData(_id) {
     const res = await fetch(`http://localhost:3000/api/posts/${_id}`, {
         cache: "no-store",

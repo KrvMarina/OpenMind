@@ -8,6 +8,10 @@ import Button from "@/app/components/button/button";
 import Link from "next/link";
 import useSWR from "swr";
 
+export const metadata = {
+    title: "Dashboard -  Post",
+    description: "page",
+};
 
 
 const Userposts = () => {

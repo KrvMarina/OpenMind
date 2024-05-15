@@ -5,6 +5,11 @@ import Input from "@/app/components/input/input";
 import Button from "@/app/components/button/button";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Sign in",
+    description: "page",
+};
+
 const Signin = () => {
     return (
         <div className={styles.container}>
