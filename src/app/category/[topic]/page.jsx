@@ -14,7 +14,6 @@ async function getData() {
     if (!res.ok) {
         throw new Error("Failed to fetch data");
     }
-
     return res.json();
 }
 
@@ -28,7 +27,7 @@ const Topic = async ({ params }) => {
 
                 {data.map((item) =>
                 (
-                    <Link href={`/category/topic/${item.id}`} key={item.id} >
+                    <Link href={`./topic/${item._id}`} key={item._id} >
                         <div className={styles.card}>
                             <Image
                                 src={item.img}
