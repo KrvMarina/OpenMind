@@ -12,7 +12,7 @@ import { GrTechnology } from "react-icons/gr";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { IoPeople } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
-import { getPosts } from "./api/posts/route";
+
 
 const categories = [
     {

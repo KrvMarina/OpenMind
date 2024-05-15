@@ -1,14 +1,16 @@
-'use server'
+import { NextResponse } from "next/server";
 import connectDB from "@/app/utils/db";
 import PostModel from "@/app/models/postModel";
 
-export async function getPosts() {
+
+export const GET = async (request) => {
+
     try {
         await connectDB();
         const data = await PostModel.find();
-        console.log(data);
-        return { msg: 'GET' }
-    } catch (error) {
-        return { errMsg: error.message }
+
+        return new NextResponse(JSON.stringify(data), { status: 200 });
+    } catch (err) {
+        return new NextResponse("Database Error", { status: 500 });
     }
-}
+};
