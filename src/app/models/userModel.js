@@ -1,9 +1,8 @@
 import { Schema, model, models } from "mongoose";
 
-
 const userSchema = new Schema(
     {
-        name: {
+        username: {
             type: String,
             unique: true,
             required: true,
@@ -20,6 +19,6 @@ const userSchema = new Schema(
     }, { timestamps: true }
 );
 
-const UserModel = models.post || model('user', userSchema);
+const UserModel = models.user || model('user', userSchema);
 
 export default UserModel;
