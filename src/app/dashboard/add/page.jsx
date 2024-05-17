@@ -1,14 +1,14 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+import useSWR from "swr";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Input from "@/app/components/input/input";
 import Menu from "../../components/menu/page";
 import Button from "@/app/components/button/button";
+import { useSession } from "next-auth/react";
 
-export const metadata = {
-    title: "Dashboard -  Add",
-    description: "page",
-};
+
 
 
 const categories = [
@@ -23,6 +23,20 @@ const categories = [
 ];
 
 const Add = () => {
+    const session = useSession();
+    console.log(session);
+    //const router = useRouter();
+
+    //NEW WAY TO FETCH DATA
+    const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+    const { data, mutate, error, isLoading } = useSWR(
+        "/api/posts",
+        fetcher
+    );
+
+    console.log(data);
+
     return (
         <div className={styles.container}>
             <h2 className={styles.titel}>Dashboard</h2>
