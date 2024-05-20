@@ -8,20 +8,18 @@ import Button from "@/app/components/button/button";
 import Link from "next/link";
 import useSWR from "swr";
 
-export const metadata = {
-    title: "Dashboard -  Post",
-    description: "page",
-};
+
 
 
 const Userposts = () => {
 
-    const fetcher = (...args) => fetch(...args).then((res) => res.json());
+    /*const fetcher = (...args) => fetch(...args).then((res) => res.json());
     const { data, mutate, error, isLoading } = useSWR(
         "https://jsonplaceholder.typicode.com/posts",
         fetcher
     );
     console.log(data);
+    */
     return (
         <div className={styles.container}>
             <h2 className={styles.titel}>Dashboard</h2>

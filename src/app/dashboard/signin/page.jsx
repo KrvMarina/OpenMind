@@ -1,13 +1,26 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './page.module.css';
 import Input from "@/app/components/input/input";
 import Button from "@/app/components/button/button";
 import Link from "next/link";
 import { getProviders, signIn, useSession } from "next-auth/react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Signin = () => {
+    const session = useSession();
+    const router = useRouter();
+    const params = useSearchParams();
 
+
+
+    if (session.status === "loading") {
+        return <p>Loading...</p>;
+    }
+
+    if (session.status === "authenticated") {
+        router?.push("/dashboard/add");
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
