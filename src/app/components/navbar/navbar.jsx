@@ -3,8 +3,10 @@ import Link from "next/link";
 import React from "react";
 import styles from "./page.module.css";
 import Button from "../button/button";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+    const session = useSession();
     return (
         <div className={styles.container}>
             <Link href="/." className={styles.logo}>OpenMind</Link>
@@ -13,7 +15,11 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
                 <Link href="/contact">Contact</Link>
                 <Link href="/dashboard/add">Dashboard</Link>
-                <Button url="/dashboard/signin" text="Sign in" inverted />
+                {session.status === "authenticated" && (
+                    <button className={styles.logout} onClick={signOut}>
+                        Logout
+                    </button>
+                )}
             </div>
         </div>
     )
