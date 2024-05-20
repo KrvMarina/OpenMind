@@ -9,11 +9,11 @@ const postSchema = new Schema({
         type: String,
         required: true,
     },
-    desc: {
+    img: {
         type: String,
         required: true,
     },
-    img: {
+    desc: {
         type: String,
         required: true,
     },

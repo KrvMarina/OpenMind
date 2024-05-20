@@ -40,6 +40,24 @@ const handler = NextAuth({
     pages: {
         error: "/dashboard/signup",
     },
+    callbacks: {
+        async jwt({ token, user }) {
+            if (user) {
+
+                token.username = user.username;
+
+            }
+            return token;
+        },
+        async session({ session, token }) {
+            if (token) {
+
+                session.user.username = token.username;
+
+            }
+            return session;
+        },
+    },
 });
 
 export { handler as GET, handler as POST };
