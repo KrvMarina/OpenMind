@@ -24,8 +24,8 @@ const categories = [
 const Add = () => {
     const session = useSession();
     const router = useRouter();
+    const [errorMessage, setErrorMessage] = useState('');
 
-    //NEW WAY TO FETCH DATA
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
     const { data, mutate, error, isLoading } = useSWR(
@@ -49,6 +49,32 @@ const Add = () => {
         const img = e.target[2].value;
         const desc = e.target[3].value;
 
+        if (!category) {
+            setErrorMessage('Category is required.');
+            return;
+        }
+
+        if (title.length < 10) {
+            setErrorMessage('Title must be at least 10 characters long.');
+            return;
+        }
+
+        if (title.length > 30) {
+            setErrorMessage('Title cannot be more than 30 characters long.');
+            return;
+        }
+
+        if (!img.startsWith("https://images.unsplash.com/photo")) {
+            setErrorMessage('Image URL must start with "https://images.unsplash.com/photo".');
+            return;
+        }
+
+        if (desc.length < 100) {
+            setErrorMessage('Description must be at least 100 characters long.');
+            return;
+        }
+
+
         try {
             await fetch("/api/posts", {
                 method: "POST",
@@ -61,7 +87,8 @@ const Add = () => {
                 }),
             });
             mutate();
-            e.target.reset()
+            e.target.reset();
+            setErrorMessage('');
         } catch (err) {
             console.log(err);
         }
@@ -88,7 +115,7 @@ const Add = () => {
                         </select>
 
                         <Input type="text" id="title" placeholder="Enter title" />
-                        <Input type="text" id="image" placeholder="Enter image" />
+                        <Input type="text" id="image" placeholder="Enter image from unsplash" />
                         <label className={styles.label}>Content</label>
                         <textarea
                             placeholder="Enter content"
@@ -96,6 +123,7 @@ const Add = () => {
                             rows="10"
                         ></textarea>
                         <button className={styles.button}>Send</button>
+                        {errorMessage && <p className={styles.error}>{errorMessage}</p>}
                     </form>
                 </div>
             </div>

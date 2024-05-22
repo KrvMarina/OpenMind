@@ -50,7 +50,7 @@ const Userposts = () => {
             <div className={styles.container}>
                 <h2 className={styles.titel}>Dashboard</h2>
                 <div className={styles.content}>
-                    <Menu />
+                    <Menu username={session.data.user.username} />
                     <div> <h3 className={styles.titel_h3}>My posts</h3>
                         <div className={styles.cards_container}>
                             {isLoading
@@ -70,7 +70,11 @@ const Userposts = () => {
                                             className={styles.delete}
                                             onClick={() => handleDelete(post._id)}
                                         >
-                                            delete
+                                            Delete
+                                        </button>
+
+                                        <button>
+                                            View
                                         </button>
                                     </div>
                                 ))}

@@ -77,3 +77,9 @@
     font-weight: 400;
     color: var(--title-colour);
 }
+
+.error {
+    margin-top: 8px;
+    color: #be0606;
+    text-align: center;
+}
