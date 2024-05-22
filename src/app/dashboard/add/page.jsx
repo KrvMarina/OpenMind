@@ -99,7 +99,7 @@ const Add = () => {
             <div className={styles.container}>
                 <h2 className={styles.titel}>Dashboard</h2>
                 <div className={styles.content}>
-                    <Menu />
+                    <Menu username={session.data.user.username} />
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <h3 className={styles.titel_h3}>Add new post</h3>
                         <label className={styles.label}>Category</label>

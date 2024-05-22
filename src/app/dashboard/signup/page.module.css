@@ -23,3 +23,9 @@
     margin-top: 8px;
     text-align: center;
 }
+
+.error {
+    margin-top: 8px;
+    color: #d60606;
+    text-align: center;
+}

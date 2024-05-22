@@ -19,6 +19,26 @@ const Signup = () => {
         const email = e.target[1].value;
         const password = e.target[2].value;
 
+        if (username.length < 2) {
+            setError("Username must be at least 2 characters long");
+            return;
+        }
+
+        if (!email.includes("@") || !email.includes(".") || email.length < 7) {
+            setError("Please enter a valid email");
+            return;
+        }
+
+        if (password.length < 8) {
+            setError("Password must be at least 8 characters long");
+            return;
+        }
+
+        if (!/[A-Z]/.test(password) || !/\d/.test(password)) {
+            setError("Password must contain at least one uppercase letter and one digit");
+            return;
+        }
+
         try {
             const res = await fetch("/api/auth/signup", {
                 method: "POST",
@@ -47,7 +67,8 @@ const Signup = () => {
                 <button className={styles.button}>Register</button>
                 <p className={styles.under_form}>Already have an account?<Link href="/dashboard/signin">Sign in</Link></p>
 
-                {error && "Something went wrong!"}
+
+                {error && <p className={styles.error}>{error}</p>}
             </form>
         </div>
     )
