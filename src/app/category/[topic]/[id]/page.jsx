@@ -47,7 +47,7 @@ const Post = async ({ params }) => {
                 className={styles.img}>
             </Image>
             <p className={styles.post_text}>
-                {data.des}
+                {data.desc}
             </p>
         </div>
     );

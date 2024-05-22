@@ -37,9 +37,3 @@
     font-weight: 400;
     color: var(--title-colour);
 }
-
-.card:hover {
-    background: var(--main-colour);
-    color: var(--light-colour);
-    border: none;
-}
