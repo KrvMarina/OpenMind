@@ -18,7 +18,6 @@ const Userposts = () => {
     const session = useSession();
     const router = useRouter();
 
-    //NEW WAY TO FETCH DATA
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
     const { data, mutate, error, isLoading } = useSWR(
@@ -35,6 +34,16 @@ const Userposts = () => {
         router?.push("/dashboard/signin");
     }
 
+    const handleDelete = async (id) => {
+        try {
+            await fetch(`/api/posts/${id}`, {
+                method: "DELETE",
+            });
+            mutate();
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     if (session.status === "authenticated") {
         return (
@@ -57,12 +66,12 @@ const Userposts = () => {
                                         </Image>
 
                                         <h4 className={styles.title_card}>{post.title}</h4>
-                                        <span
+                                        <button
                                             className={styles.delete}
                                             onClick={() => handleDelete(post._id)}
                                         >
                                             delete
-                                        </span>
+                                        </button>
                                     </div>
                                 ))}
                         </div>
