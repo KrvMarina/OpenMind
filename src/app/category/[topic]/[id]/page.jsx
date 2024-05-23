@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     };
 }
 async function getData(_id) {
-    const res = await fetch(`http://localhost:3000/api/posts/${_id}`, {
+    const res = await fetch(`http://localhost:3000/api/posts/category/${_id}`, {
         cache: "no-store",
     });
 

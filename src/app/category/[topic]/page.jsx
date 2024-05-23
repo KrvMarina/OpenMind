@@ -5,38 +5,27 @@ import Link from "next/link";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
+import { notFound } from "next/navigation";
 
-async function getData() {
-    const res = await fetch("http://localhost:3000/api/posts", {
+
+
+async function getData(topic) {
+    const res = await fetch(`http://localhost:3000/api/posts/${topic}`, {
         cache: "no-store",
     });
-
     if (!res.ok) {
-        throw new Error("Failed to fetch data");
+        return notFound()
     }
     return res.json();
 }
 
-export async function generateMetadata({ params }) {
-
-    const data = await getData(params.id)
-    return {
-        title: data.title,
-        description: "page",
-    };
-}
-
 const Topic = async ({ params }) => {
-
-    const data = await getData();
+    const data = await getData(params.topic);
     return (
         <div className={styles.container}>
-            <h2 className={styles.titel}>{decodeURIComponent(params.topic)}</h2>
             <div className={styles.cards_container}>
-
-                {data.map((item) =>
-                (
-                    <Link href={`./topic/${item._id}`} key={item._id} >
+                {data.map((item) => (
+                    <Link href={`/category/${params.topic}/${item._id}`} key={item._id}>
                         <div className={styles.card}>
                             <Image
                                 src={item.img}
@@ -55,11 +44,9 @@ const Topic = async ({ params }) => {
                             </div>
                         </div>
                     </Link>
-                ))};
+                ))}
             </div>
-
         </div>
-    )
+    );
 }
-
 export default Topic;
