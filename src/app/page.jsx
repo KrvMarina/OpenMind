@@ -57,9 +57,21 @@ const categories = [
     }
 ];
 
-export default function Home() {
-    //const res = await getPosts();
-    // console.log(res);
+async function getData() {
+    const res = await fetch("http://localhost:3000/api/posts", {
+        cache: "no-store",
+    });
+
+    if (!res.ok) {
+        throw new Error("Failed to fetch data");
+    }
+    return res.json();
+}
+
+
+export default async function Home() {
+    const data = await getData();
+    const popularPosts = data.slice(0, 3);
     return (
         <div className={styles.container}>
             <div className={styles.text_block}>
@@ -68,67 +80,29 @@ export default function Home() {
                 <Button url="/about" text="Start"></Button>
             </div>
 
-            <h3 className={styles.titel_h3}>Popular posts</h3>
+            <h3 className={styles.titel_h3}>Our posts</h3>
             <div className={styles.cards_container}>
-                <Link href="./topic/1">
-                    <div className={styles.card}>
-                        <Image
-                            src="/photo.png"
-                            width={500}
-                            height={500}
-                            alt="photo"
-                            className={styles.img}>
-                        </Image>
-                        <p className={styles.author}>
-                            <RxAvatar className={styles.avatar} />Anna
-                        </p>
-                        <h4 className={styles.title_card}>Always Hungry and Tired? Here Are 8 Potential Reasons Why</h4>
-                        <div className={styles.icons}>
-                            <p><IoEyeSharp />200</p>
-                            <p><FaHeart />68</p>
+                {popularPosts.map((item) => (
+                    <Link href={`/category/topic/${item._id}`} key={item._id}>
+                        <div className={styles.card}>
+                            <Image
+                                src={item.img}
+                                width={500}
+                                height={500}
+                                alt="photo"
+                                className={styles.img}>
+                            </Image>
+                            <p className={styles.author}>
+                                <RxAvatar className={styles.avatar} />{item.username}
+                            </p>
+                            <h4 className={styles.title_card}>{item.title}</h4>
+                            <div className={styles.icons}>
+                                <p><IoEyeSharp />500</p>
+                                <p><FaHeart />98</p>
+                            </div>
                         </div>
-                    </div>
-                </Link>
-
-                <Link href="./topic/2" >
-                    <div className={styles.card}>
-                        <Image
-                            src="/photo.png"
-                            width={500}
-                            height={500}
-                            alt="photo"
-                            className={styles.img}>
-                        </Image>
-                        <p className={styles.author}>
-                            <RxAvatar className={styles.avatar} />Alan
-                        </p>
-                        <h4 className={styles.title_card}>10 Ways to Lose More Weight Walking</h4>
-                        <div className={styles.icons}>
-                            <p><IoEyeSharp />100</p>
-                            <p><FaHeart />28</p>
-                        </div>
-                    </div>
-                </Link>
-
-                <Link href="./topic/3" >
-                    <div className={styles.card}>
-                        <Image
-                            src="/photo.png"
-                            width={500}
-                            height={500}
-                            alt="photo"
-                            className={styles.img}>
-                        </Image>
-                        <p className={styles.author}>
-                            <RxAvatar className={styles.avatar} />Nik
-                        </p>
-                        <h4 className={styles.title_card}>The Basics of Body Recomposition</h4>
-                        <div className={styles.icons}>
-                            <p><IoEyeSharp />500</p>
-                            <p><FaHeart />98</p>
-                        </div>
-                    </div>
-                </Link>
+                    </Link>
+                ))}
             </div>
 
             <h3 className={styles.titel_h3}>Choose your category</h3>

@@ -36,7 +36,7 @@ const Userposts = () => {
 
     const handleDelete = async (id) => {
         try {
-            await fetch(`/api/posts/${id}`, {
+            await fetch(`/api/posts/categoty/${id}`, {
                 method: "DELETE",
             });
             mutate();
