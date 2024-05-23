@@ -117,7 +117,7 @@ const Add = () => {
                             className={styles.text_area}
                             rows="10"
                         ></textarea>
-                        <button className={styles.btn}>Send</button>
+                        <button className={styles.btn}>Post</button>
                         {errorMessage && <p className={styles.error}>{errorMessage}</p>}
                     </form>
                 </div>
