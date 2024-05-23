@@ -51,13 +51,13 @@ const Add = () => {
             return;
         }
 
-        if (title.length < 10) {
-            setErrorMessage('Title must be at least 10 characters long.');
+        if (title.length < 5) {
+            setErrorMessage('Title must be at least 5 characters long.');
             return;
         }
 
-        if (title.length > 30) {
-            setErrorMessage('Title cannot be more than 30 characters long.');
+        if (title.length > 50) {
+            setErrorMessage('Title cannot be more than 50 characters long.');
             return;
         }
 
