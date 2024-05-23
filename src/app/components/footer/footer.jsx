@@ -34,7 +34,7 @@ const SimpleForm = ({ onSubmitted }) => {
 
 const Footer = () => (
     <div className={styles.container}>
-        <p>©2023 OpenMind. All rights reserved.</p>
+        <p>©2024 OpenMind. All rights reserved.</p>
         <MailchimpSubscribe
             url={mailchimpURL}
             render={({ subscribe, status, message }) => (

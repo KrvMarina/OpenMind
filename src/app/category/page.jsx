@@ -8,11 +8,7 @@ import { GrTechnology } from "react-icons/gr";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { IoPeople } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
-
-export const metadata = {
-    title: "Categories",
-    description: "page",
-};
+import { BsFillMegaphoneFill } from "react-icons/bs";
 
 const categories = [
     {
@@ -47,7 +43,7 @@ const categories = [
     },
     {
         href: "/category/Media",
-        icon: <FaPerson />,
+        icon: <BsFillMegaphoneFill />,
         title: "Media",
         description: "Writing, Art, Gaming, Humor, Movies, Music, Photography, Television"
     },
@@ -63,7 +59,6 @@ const categories = [
         title: "World",
         description: "Cities, Nature, Travel"
     }
-
 ];
 
 const Category = () => {

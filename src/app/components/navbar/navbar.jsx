@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./page.module.css";
-import Button from "../button/button";
 import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
@@ -13,7 +12,6 @@ const Navbar = () => {
             <div className={styles.links}>
                 <Link href="/category">Category</Link>
                 <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
                 <Link href="/dashboard/add">Dashboard</Link>
                 {session.status === "authenticated" && (
                     <button className={styles.logout} onClick={signOut}>

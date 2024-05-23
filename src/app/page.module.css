@@ -60,27 +60,16 @@
     color: var(--title-colour);
 }
 
-.icons {
-    display: flex;
-    gap: 16px;
-}
-
-.icons p,
 .author {
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.author,
-.icons {
+.author {
     color: var(--small_text-colour);
 }
 
-.avatar {
-    width: 24px;
-    height: 24px;
-}
 
 .category_content {
     margin: 32px auto;

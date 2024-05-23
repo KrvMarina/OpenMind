@@ -1,30 +1,22 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Input from "@/app/components/input/input";
 import Menu from "../../components/menu/page";
-import Button from "@/app/components/button/button";
-import Link from "next/link";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 
-
-
 const Userposts = () => {
-
     const session = useSession();
     const router = useRouter();
-
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
     const { data, mutate, error, isLoading } = useSWR(
         `/api/posts?username=${session?.data?.user.username}`,
         fetcher
     );
-    console.log(data);
 
     if (session.status === "loading") {
         return <p>Loading...</p>;
@@ -71,10 +63,6 @@ const Userposts = () => {
                                             onClick={() => handleDelete(post._id)}
                                         >
                                             Delete
-                                        </button>
-
-                                        <button>
-                                            View
                                         </button>
                                     </div>
                                 ))}

@@ -2,15 +2,9 @@ import React from "react";
 import styles from './page.module.css'
 import Button from "../components/button/button";
 
-export const metadata = {
-    title: "About",
-    description: "page",
-};
-
 const About = () => {
     return (
         <div className={styles.container}>
-
             <h2 className={styles.titel}>About</h2>
             <p>At OpenMind, we believe in the power of diverse perspectives and
                 the value of shared experiences. Our platform is designed to be a
@@ -37,7 +31,7 @@ const About = () => {
                 shared curiosity about the world around us.
             </p>
             <p span className={styles.accent}>Let's explore the world of ideas together!</p>
-            <Button url="/about" text="Write"></Button>
+            <Button url="/dashboard/add" text="Write"></Button>
         </div>
     )
 }

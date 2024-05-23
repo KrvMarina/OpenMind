@@ -1,18 +1,16 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from './page.module.css';
 import Input from "@/app/components/input/input";
-import Button from "@/app/components/button/button";
 import Link from "next/link";
-import { getProviders, signIn, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
+
 
 const Signin = () => {
     const session = useSession();
     const router = useRouter();
     const params = useSearchParams();
-
-
 
     if (session.status === "loading") {
         return <p>Loading...</p>;
@@ -39,10 +37,8 @@ const Signin = () => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 <Input type="e-mail" id="email" placeholder="Enter email" />
                 <Input type="password" id="password" placeholder="Enter password" />
-                <button className={styles.button}>Login</button>
-                <p className={styles.under_form}>No account?<Link href="/dashboard/signup">Create</Link></p>
-
-
+                <button className={styles.btn}>Login</button>
+                <p className={styles.under_form}>No account? <Link href="/dashboard/signup">Create</Link></p>
             </form>
         </div>
     )

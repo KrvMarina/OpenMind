@@ -1,14 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useSWR from "swr";
 import styles from "./page.module.css";
-import Image from "next/image";
 import Input from "@/app/components/input/input";
 import Menu from "../../components/menu/page";
-import Button from "@/app/components/button/button";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
 
 const categories = [
     "Life",
@@ -74,7 +71,6 @@ const Add = () => {
             return;
         }
 
-
         try {
             await fetch("/api/posts", {
                 method: "POST",
@@ -113,7 +109,6 @@ const Add = () => {
                                 </option>
                             ))}
                         </select>
-
                         <Input type="text" id="title" placeholder="Enter title" />
                         <Input type="text" id="image" placeholder="Enter image from unsplash" />
                         <label className={styles.label}>Content</label>
@@ -122,7 +117,7 @@ const Add = () => {
                             className={styles.text_area}
                             rows="10"
                         ></textarea>
-                        <button className={styles.button}>Send</button>
+                        <button className={styles.btn}>Send</button>
                         {errorMessage && <p className={styles.error}>{errorMessage}</p>}
                     </form>
                 </div>

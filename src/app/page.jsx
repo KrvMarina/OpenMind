@@ -12,7 +12,7 @@ import { GrTechnology } from "react-icons/gr";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { IoPeople } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
-
+import { BsFillMegaphoneFill } from "react-icons/bs";
 
 const categories = [
     {
@@ -42,7 +42,7 @@ const categories = [
     },
     {
         href: "/category/Media",
-        icon: <FaPerson />,
+        icon: <BsFillMegaphoneFill />,
         title: "Media"
     },
     {
@@ -68,7 +68,6 @@ async function getData() {
     return res.json();
 }
 
-
 export default async function Home() {
     const data = await getData();
     const popularPosts = data.slice(0, 3);
@@ -77,7 +76,7 @@ export default async function Home() {
             <div className={styles.text_block}>
                 <h1 className={styles.titel}>Open your mind to new possibilities</h1>
                 <p className={styles.subtitle}>Share your thoughts and knowledge with the world</p>
-                <Button url="/about" text="Start"></Button>
+                <Button url="/dashboard/add" text="Start"></Button>
             </div>
 
             <h3 className={styles.titel_h3}>Our posts</h3>
@@ -93,13 +92,9 @@ export default async function Home() {
                                 className={styles.img}>
                             </Image>
                             <p className={styles.author}>
-                                <RxAvatar className={styles.avatar} />{item.username}
+                                {item.username}
                             </p>
                             <h4 className={styles.title_card}>{item.title}</h4>
-                            <div className={styles.icons}>
-                                <p><IoEyeSharp />500</p>
-                                <p><FaHeart />98</p>
-                            </div>
                         </div>
                     </Link>
                 ))}

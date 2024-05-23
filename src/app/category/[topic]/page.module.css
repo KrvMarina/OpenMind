@@ -8,7 +8,6 @@
     margin-top: 32px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Три колонки однакової ширини */
     gap: 24px;
 }
 
@@ -38,24 +37,11 @@
     color: var(--title-colour);
 }
 
-.icons {
-    display: flex;
-    gap: 16px;
-}
-
-.icons p,
 .author {
     display: flex;
     align-items: center;
-    gap: 4px;
 }
 
-.author,
-.icons {
+.author {
     color: var(--small_text-colour);
-}
-
-.avatar {
-    width: 24px;
-    height: 24px;
 }

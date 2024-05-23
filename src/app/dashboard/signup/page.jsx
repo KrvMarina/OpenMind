@@ -2,15 +2,12 @@
 import React, { useState } from "react";
 import styles from './page.module.css';
 import Input from "@/app/components/input/input";
-import Button from "@/app/components/button/button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
-
 const Signup = () => {
     const [error, setError] = useState(false);
-
     const router = useRouter();
 
     const handleSubmit = async (e) => {
@@ -64,10 +61,8 @@ const Signup = () => {
                 <Input type="text" id="username" placeholder="Enter username" />
                 <Input type="e-mail" id="email" placeholder="Enter email" />
                 <Input type="password" id="password" placeholder="Enter password" />
-                <button className={styles.button}>Register</button>
-                <p className={styles.under_form}>Already have an account?<Link href="/dashboard/signin">Sign in</Link></p>
-
-
+                <button className={styles.btn}>Register</button>
+                <p className={styles.under_form}>Already have an account? <Link href="/dashboard/signin">Sign in</Link></p>
                 {error && <p className={styles.error}>{error}</p>}
             </form>
         </div>
