@@ -1,6 +1,4 @@
-This project is a full-featured blog application where users can register, browse articles by category, write their own articles, and delete them as needed.
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This project is a full-featured blog application where users can register, browse articles by category, write their own articles, and delete them as needed. Written using [Next.js](https://nextjs.org/)
 
 ## Getting Started
 
